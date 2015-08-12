@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="firstApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>	
+	<script src="app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body >
+
+	<style>
+		.highlight {
+			background-color: yellow;
+		}
+		.red {
+			color: red;
+		}
+		.green {
+			color: green;
+		}
+		.salmon_bg {
+			background-color: salmon;
+		}
+
+		.yellow {
+			color: orange;
+		}
+		#container {
+		    margin: auto;
+		    padding: 5px;
+		}
+		#squareOne {
+			width: 400px;
+			height: 400px;
+			float: left;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 200px;       /* the same as your div height */
+			font-size: 90px;
+			padding: 5px;
+			margin-right: 5px;
+			
+		}
+		#squareTwo {
+			width: 400px;
+			height: 400px;
+			float: left;
+			text-align: center;
+			vertical-align: top;
+			line-height: 200px;       /* the same as your div height */
+			font-size: 90px;
+			padding: 5px;
+			
+		}
+		.green_bg {
+			background-color: green;
+		}
+		.red_bg {
+			background-color: red;
+		}
+	</style>
+
+	<div ng-controller="MyFirstController">
+		<h1>My name is: {{name}}</h1>
+		<input type="text" placeholder="What be your name, fool">
+	</div>
+
+	<div ng-controller="ExercisesController">
+		<h1>My fav color is {{FavColor}}</h1>
+		<h3>seconds in a century {{secondsInACentury | number}}</h3>
+		<h3>Date {{rightNow | date:'medium'}}</h3>
+		<ul>
+			<li ng-repeat="name in names">
+				{{name}}
+			</li>
+
+		</ul>
+		<ul>
+			<li ng-repeat="symbol in symbols">
+				({{symbol}})
+			</li>
+		</ul>
+		<ul>
+			<li ng-repeat="dup in dups track by $index">
+				{{dup}}
+			</li>
+		</ul>
+		<ul>
+			<li ng-repeat="(key, value) in objs">
+				{{key}} :::: {{value}}
+			</li>
+
+		</ul>
+	</div>
+
+	<div ng-show="3 + 4 == 5"> 
+	    3 + 4 isn't 5, don't show
+	</div>
+
+	<div ng-show="3 + 4 == 7">
+	    3 + 4 is 7, do show
+	</div>
+
+	<div ng-hide="3 + 4 == 5">
+	    3 + 4 isn't 5, don't hide
+	</div>
+
+	<div ng-hide="3 + 4 == 7">
+	    3 + 4 is 7, do hide
+	</div>
+	<br>
+	<h1>Sign up Page</h1>
+	<input type="text" name="" id="" ng-model="password" >
+	<div ng-class="{red: password.length < 6, green: password.length >= 6}">
+		<p>Your password is {{password.length}} characters</p>
+	</div>
+	<div ng-show="password.length < 6">
+		<p>Your password is invalid</p>
+	</div>
+	<div ng-show="password.length >= 6">
+		<p><input type="submit" value="Sign Up!"></p>
+	</div>
+
+	<div ng-class="{highlight: 4 + 4 == 8}"> 4 + 4 = 8</div>
+	<div ng-class="{highlight: 4 + 4 == 10}">4 + 4 = 10</div>
+<br>
+	<select name="" id="" ng-model="sortBy">
+		<option value="rating">Rating</option>
+		<option value="price">Price</option>
+	</select>
+
+	<div ng-controller="cameraController">
+		<ul ng-repeat="camera in cameras | orderBy: sortBy" >
+			<li>{{camera.title}}</li>
+		 <img src="{{camera.image}}" height="100px">
+			<li>{{camera.rating}}</li>
+			<li ng-show="camera.onSale === false">{{camera.price | currency}}</li>			
+			<li ng-class="{yellow: camera.onSale === true}" ng-show="camera.onSale === true">{{camera.price | currency}} ON SALE!!</li>
+			<li>{{camera.onSale}}</li>
+		</ul>
+	</div>	
+
+	<div ng-controller="clickController">
+		<h3>The number is: {{number}}</h3>
+		<button ng-click="pickRandomNumber()">Pick Random Number</button>
+
+		<h1>Word Reverser</h1>
+		<input type="text" name="" id="" ng-model="word">
+		<h1>{{word}}</h1>
+		<button ng-click="reverse()">
+			Reverse!
+		</button>
+	</div>
+	<br>
+
+	<!-- ********************** PING PONG *********************** -->
+
+	<div ng-controller="pingPongController">
+	<div id="container">
+		<div ng-click="incrementOne()" ng-model="playerOne" id="squareOne" ng-class="{green_bg: playerOne === 11, red_bg: playerTwo === 11, salmon_bg: playerOne < 11}">
+			<h1 >{{playerOne}}</h1>
+			<h1 ng-show="count < 2">Serving</h1>
+		</div>
+		<div ng-click="incrementTwo()" ng-model="playerTwo" id="squareTwo" ng-class="{green_bg: playerTwo === 11, red_bg: playerOne === 11, salmon_bg: playerTwo < 11}">
+			<h1 >{{playerTwo}}</h1>
+			<h1 ng-show="count >= 2">Serving</h1>
+		</div>
+	</div>	
+		<button ng-click="reset()">Reset</button>
+	</div>
+
+	<!-- CONTACT ************************************  -->
+	<div ng-controller="contactController" style="clear:both">
+	<form ng-submit="saveContact(newContact)" ng-model="newContact">
+		Name<input type="text" ng-model="newContact.cName">
+		Email<input type="email" ng-model="newContact.cEmail">
+		Phone<input type="text" ng-model="newContact.cPhone">
+		<input type="submit" value="Foo">
+	</form>
+	<input type="text" name="" id="" ng-model="search">
+
+	<div>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<tr>
+					<td>{{newContact.cName}}</td>
+					<td>{{newContact.cEmail}}</td>
+					<td>{{newContact.cPhone}}</td>
+				</tr>
+			</tr>
+		</table>
+		
+	</div>
+
+	<table class="table table-striped" style="text-align:center; width:900px;" ng-model="contact">
+	           <thead>
+	               <tr style="font-weight:bold">
+	               <td>Name</td>
+	               <td>Email</td>
+	               <td>Phone</td>
+	               </tr>
+	           </thead>
+	           <tbody>
+	               <tr ng-repeat="contact in contacts | filter:search" >
+		               <td>{{newContact.cName}}</td>
+		               <td>{{newContact.cEmail}}</td>
+		               <td>{{newContact.cPhone}}</td>
+	               </tr>
+	           </tbody>
+	       </table>
+	</div>
+</body>
+</html>
