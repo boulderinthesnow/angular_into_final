@@ -4,7 +4,7 @@
 }
 
 .placeBox {
-	width: 80%;
+	width: 100%;
 	height: 150px;
 	background-color: coral;
 	margin-top: 5px;
@@ -13,5 +13,4 @@
 #placeContainer {
 	margin-left: 10%;
 	margin-right: 10%;
-
 }
