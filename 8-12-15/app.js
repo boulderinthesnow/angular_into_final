@@ -2,7 +2,7 @@ var app = angular.module("firstApp", []);
 
 	
 	app.controller("clickController", function($scope){
-		var places = [];
+		$scope.places = [];
 		var showForm = false
 		$scope.newPost = function() {
 			$scope.showForm = true
@@ -10,8 +10,8 @@ var app = angular.module("firstApp", []);
 		$scope.saveForm = function(form) {
 			console.log(form);
 			$scope.showForm = false;
-			// add data from post into an object and push it into places array
-			places.push({
+			// DONE add data from post into an object and push it into places array
+			$scope.places.push({
 				title: form.title,
 				author: form.author,
 				image: form.image,
