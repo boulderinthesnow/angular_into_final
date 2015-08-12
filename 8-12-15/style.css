@@ -2,3 +2,16 @@
 	padding-right: 75px;
 	padding-left: 75px;
 }
+
+.placeBox {
+	width: 80%;
+	height: 150px;
+	background-color: coral;
+	margin-top: 5px;
+}
+
+#placeContainer {
+	margin-left: 10%;
+	margin-right: 10%;
+
+}

@@ -101,6 +101,12 @@
 	<!-- DONE when new post button clicked, show form with title, author, image url, description -->
 	<p>Places array: {{places}}</p>
 	{{saveForm[0].title}}
+	<div id="placeContainer">
+		<div ng-repeat="place in places" class="placeBox">
+
+			<p>{{place.title}}</p>
+		</div>
+	</div>
 	<!-- interate through the places array, print out each object properties -->
 </div>
 </body>
