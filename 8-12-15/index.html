@@ -104,7 +104,6 @@
 	</div>
 	<!-- DONE when new post button clicked, show form with title, author, image url, description -->
 	<p>Places array: {{places}}</p>
-	{{saveForm[0].title}}
 	<div id="placeContainer">
 		<div ng-repeat="place in places | orderBy: '-rank'" class="placeBox">
 			<span class="imageContainer">
@@ -114,17 +113,17 @@
 			<!-- add a default ranking of 0, increment if up arrow, decrement if rev -->
 				<div>
 					{{place.title}}
-					<img src="images/up_green_arrow.png" height="20px" ng-click="up(place.count)">
-					<img src="images/down_red_arrow.png" height="20px" ng-click="down(place.count)">
+					PLACE: {{place}}
+
+					<img src="images/up_green_arrow.png" height="20px" ng-click="place.up()">
+					<img src="images/down_red_arrow.png" height="20px" ng-click="place.down()">
 					{{place.rank}}
+					{{place.count}}
 				</div >
 				<div>{{place.author}}</div>
 				<span>{{place.description}}</span>
 				<div>{{place.time | amCalendar}}</div>
 			</span>
-
-			
-			
 		</div>
 	</div>
 	<!-- DONE interate through the places array, print out each object properties -->

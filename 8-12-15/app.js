@@ -12,7 +12,13 @@ var app = angular.module("firstApp", [
 								description:" Wolf bespoke before they sold out, narwhal deep v craft beer paleo put a bird on it. Kickstarter swag cronut Schlitz pork belly. Cold-pressed sustainable irony, tattooed letterpress American Apparel brunch. Keytar literally crucifix heirloom +1, craft beer dreamcatcher fanny pack paleo brunch raw denim church-key fashion axe authentic. Letterpress gentrify cold-pressed, hella stumptown twee Odd Future. Vice Pinterest Portland Brooklyn. Pinterest organic polaroid retro.", 
 								time: new Date(),
 								rank: 0,
-								count: 0
+								up: function(count) {
+									console.log("foo")
+									// $scope.places[count].rank += 1
+								},
+								down: function(count) {
+									// $scope.places[count].rank -= 1
+								}
 							},
 							{
 								title: "Lake Tahoe", 
@@ -21,15 +27,14 @@ var app = angular.module("firstApp", [
 								description:" Wolf bespoke before they sold out, narwhal deep v craft beer paleo put a bird on it. Kickstarter swag cronut Schlitz pork belly. Cold-pressed sustainable irony, tattooed letterpress American Apparel brunch. Keytar literally crucifix heirloom +1, craft beer dreamcatcher fanny pack paleo brunch raw denim church-key fashion axe authentic. Letterpress gentrify cold-pressed, hella stumptown twee Odd Future. Vice Pinterest Portland Brooklyn. Pinterest organic polaroid retro.", 
 								time: new Date(),
 								rank: 0,
-								count: 1
 							}
 						];
 		var showForm = false
 		$scope.newPost = function() {
 			$scope.showForm = true
 		}
-		$scope.count = 1;
 		$scope.saveForm = function(form) {
+			// $scope.count += 1
 			console.log(form);
 			$scope.showForm = false;
 			// DONE add data from post into an object and push it into places array
@@ -40,14 +45,16 @@ var app = angular.module("firstApp", [
 				description: form.description,
 				time: new Date(),
 				rank: 0,
-				count: $scope.count += 1
+				up: function(count) {
+					console.log("foo")
+					// $scope.places[count].rank += 1
+				},
+				down: function(count) {
+					console.log("foobar")
+					// $scope.places[count].rank -= 1
+				}
 			})
-			count += 1
+			
 		}
-		$scope.up = function(count) {
-			$scope.places[count].rank += 1
-		}
-		$scope.down = function(count) {
-			$scope.places[count].rank -= 1
-		}
+
 	})
