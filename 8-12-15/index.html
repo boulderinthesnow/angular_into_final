@@ -15,6 +15,10 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script src="node_modules/moment/moment.js"></script>
+	<script src="node_modules/angular-moment/angular-moment.js"></script>
+
 </head>
 <body>
 	
@@ -102,11 +106,28 @@
 	<p>Places array: {{places}}</p>
 	{{saveForm[0].title}}
 	<div id="placeContainer">
-		<div ng-repeat="place in places" class="placeBox">
+		<div ng-repeat="place in places | orderBy: '-rank'" class="placeBox">
+			<span class="imageContainer">
+				<span><img src="{{place.image}}" class="image"></span>
+			</span>
+			<span class="textContainer">
+			<!-- add a default ranking of 0, increment if up arrow, decrement if rev -->
+				<div>
+					{{place.title}}
+					<img src="images/up_green_arrow.png" height="20px" ng-click="up(place.count)">
+					<img src="images/down_red_arrow.png" height="20px" ng-click="down(place.count)">
+					{{place.rank}}
+				</div >
+				<div>{{place.author}}</div>
+				<span>{{place.description}}</span>
+				<div>{{place.time | amCalendar}}</div>
+			</span>
 
-			<p>{{place.title}}</p>
+			
+			
 		</div>
 	</div>
-	<!-- interate through the places array, print out each object properties -->
+	<!-- DONE interate through the places array, print out each object properties -->
 </div>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
