@@ -13,20 +13,32 @@ var app = angular.module("firstApp", [
 								time: new Date(),
 								rank: 0,
 								up: function(count) {
-									console.log("foo")
+									console.log(this,"*********THIS**********");
+									this.rank += 1
 									// $scope.places[count].rank += 1
 								},
 								down: function(count) {
+									this.rank -= 1
 									// $scope.places[count].rank -= 1
 								}
 							},
 							{
-								title: "Lake Tahoe", 
+								title: "Lake CrazyPants", 
 								author: "Matthew Williams", 
 								image:"http://www.ironman.com/~/media/7b907617deea480a8b6a109d898f75e4/lake%20tahoe%20carousel2.jpg?w=1600&h=980&c=1", 
 								description:" Wolf bespoke before they sold out, narwhal deep v craft beer paleo put a bird on it. Kickstarter swag cronut Schlitz pork belly. Cold-pressed sustainable irony, tattooed letterpress American Apparel brunch. Keytar literally crucifix heirloom +1, craft beer dreamcatcher fanny pack paleo brunch raw denim church-key fashion axe authentic. Letterpress gentrify cold-pressed, hella stumptown twee Odd Future. Vice Pinterest Portland Brooklyn. Pinterest organic polaroid retro.", 
 								time: new Date(),
 								rank: 0,
+								up: function(place) {
+									console.log(place,"*********THIS**********");
+
+									place.rank += 1
+									// $scope.places[count].rank += 1
+								},
+								down: function(count) {
+									this.rank -= 1
+									// $scope.places[count].rank -= 1
+								}
 							}
 						];
 		var showForm = false
@@ -46,7 +58,8 @@ var app = angular.module("firstApp", [
 				time: new Date(),
 				rank: 0,
 				up: function(count) {
-					console.log("foo")
+					console.log(this.rank += 1)
+
 					// $scope.places[count].rank += 1
 				},
 				down: function(count) {
