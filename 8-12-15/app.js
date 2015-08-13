@@ -75,4 +75,5 @@ var app = angular.module("firstApp", [
 		$scope.down = function(place) {
 			place.rank -= 1
 		}
+		$scope.sortBy
 	})
