@@ -61,7 +61,12 @@ var app = angular.module("firstApp", [
 				console.log(place.comments.length)
 		}
 		$scope.showComments = function(place) {
-				place.showComments = true;
+				 if (!place.showComments) {
+				 	place.showComments = true;
+				 	return
+				 } else {
+				 	place.showComments = !place.showComments;
+				 }
 		}
 
 		$scope.up = function(place) {
