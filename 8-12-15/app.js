@@ -13,6 +13,7 @@ var app = angular.module("firstApp", [
 								time: new Date(),
 								rank: 0,
 								showComment: false,
+								viewComments: false,
 								comments: []
 
 							},
@@ -24,6 +25,7 @@ var app = angular.module("firstApp", [
 								time: new Date(),
 								rank: 0,
 								showComment: false,
+								viewComments: false,
 								comments: []
 							}
 						];
@@ -42,6 +44,7 @@ var app = angular.module("firstApp", [
 					time: new Date(),
 					rank: 0,
 					showComment: false,
+					viewComments: false,
 					comments: []
 				})
 			}
@@ -57,6 +60,10 @@ var app = angular.module("firstApp", [
 				})
 				console.log(place.comments.length)
 		}
+		$scope.showComments = function(place) {
+				place.showComments = true;
+		}
+
 		$scope.up = function(place) {
 			place.rank += 1
 		}
