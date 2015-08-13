@@ -11,7 +11,9 @@ var app = angular.module("firstApp", [
 								image:"http://www.ironman.com/~/media/7b907617deea480a8b6a109d898f75e4/lake%20tahoe%20carousel2.jpg?w=1600&h=980&c=1", 
 								description:" Wolf bespoke before they sold out, narwhal deep v craft beer paleo put a bird on it. Kickstarter swag cronut Schlitz pork belly. Cold-pressed sustainable irony, tattooed letterpress American Apparel brunch. Keytar literally crucifix heirloom +1, craft beer dreamcatcher fanny pack paleo brunch raw denim church-key fashion axe authentic. Letterpress gentrify cold-pressed, hella stumptown twee Odd Future. Vice Pinterest Portland Brooklyn. Pinterest organic polaroid retro.", 
 								time: new Date(),
-								rank: 0
+								rank: 0,
+								comments: {}
+
 							},
 							{
 								title: "Lake WoeBeGone", 
@@ -19,12 +21,13 @@ var app = angular.module("firstApp", [
 								image:"http://www.ironman.com/~/media/7b907617deea480a8b6a109d898f75e4/lake%20tahoe%20carousel2.jpg?w=1600&h=980&c=1", 
 								description:"DIY post-ironic Helvetica cred. Lo-fi lomo direct trade keytar meh put a bird on it. Typewriter Helvetica American Apparel, butcher lo-fi dreamcatcher migas. Ethical seitan Intelligentsia, photo booth brunch cornhole messenger bag. Tilde sustainable iPhone Godard heirloom tattooed Brooklyn, disrupt fap. Pitchfork bitters 3 wolf moon stumptown letterpress. Letterpress normcore butcher tousled retro pour-over.", 
 								time: new Date(),
-								rank: 0
+								rank: 0,
+								comments: {}
 							}
 						];
 		var showForm = false
 		$scope.newPost = function() {
-			$scope.showForm = true
+			$scope.showForm = true;
 		}
 		$scope.saveForm = function(form) {
 			if ($scope.placeForm.$valid) {
@@ -36,9 +39,13 @@ var app = angular.module("firstApp", [
 					image: form.image,
 					description: form.description,
 					time: new Date(),
-					rank: 0
+					rank: 0,
+					comments: {}
 				})
 			}
+		}
+		$scope.newComment = function() {
+			$scope.showComment = true;
 		}
 		$scope.up = function(place) {
 			place.rank += 1

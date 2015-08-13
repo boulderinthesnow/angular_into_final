@@ -118,10 +118,8 @@
 		  <p ng-show=""></p>
 		</form>
 	</div>
-	form
-	<!-- DONE when new post button clicked, show form with title, author, image url, description -->
-	<p>Places array: {{places}}</p>
-	{{saveForm[0].title}}
+
+	<!-- ############### EACH PLACE #####################-->
 	<div id="placeContainer">
 		<div ng-repeat="place in places | orderBy: '-rank'" class="placeBox">
 			<span class="imageContainer">
@@ -130,21 +128,39 @@
 			<span class="textContainer">
 			<!-- add a default ranking of 0, increment if up arrow, decrement if rev -->
 				<div>
-					{{place.title}}
+					{{place.title}} |
 					<img src="images/up_green_arrow.png" height="20px" ng-click="up(place)">
 					<img src="images/down_red_arrow.png" height="20px" ng-click="down(place)">
 					{{place.rank}}
 				</div >
-				<div>{{place.author}}</div>
+				<div style="text-align: right;">By {{place.author}}</div>
 				<span>{{place.description}}</span>
-				<div>{{place.time | amCalendar}}</div>
+				<!-- DONE when add comment is touched, create new comment box appears -->
+				<div>
+					<span>{{place.time | amCalendar}} </span> | 
+					<span>Comments</span>  | 
+					<span ng-click="newComment()">Add Comment</span>
+				</div>
+				<!-- ############## COMMENT BOX ############# -->
+				<div ng-show="showComment">
+					<form ng-submit="saveComment(comment)" ng-model="comment" novalidate name="placeForm">
+					<span class="form-group">
+					  <label for="author">Author:</label>
+					  <input type="text" class="form-control" ng-model="comment.author" ng-minlength=1 required />
+					</span>
+					<span class="form-group">
+					  <label for="text"></label>
+					  Text: <input type="text" class="form-control" ng-model="comment.text" ng-minlength=1 required />
+					</span>
+						<input type="submit" value="Add Comment">
+					</form>
+				</div>
+				<!-- ############## comment box ############# -->
 			</span>
-
-			
-			
 		</div>
+
 	</div>
-	<!-- DONE interate through the places array, print out each object properties -->
-</div>
+	<!--############# each place ##################-->
+</div> 
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
