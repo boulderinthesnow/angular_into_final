@@ -139,11 +139,12 @@
 				<div>
 					<span>{{place.time | amCalendar}} </span> | 
 					<span>Comments</span>  | 
-					<span ng-click="newComment()">Add Comment</span>
+					<span ng-click="newComment(place)">Add Comment</span>
 				</div>
 				<!-- ############## COMMENT BOX ############# -->
-				<div ng-show="showComment">
-					<form ng-submit="saveComment(comment)" ng-model="comment" novalidate name="placeForm">
+				<!-- on submit, save the comment to the comments array of that place -->
+				<div ng-show="place.showComment">
+					<form ng-submit="saveComment(comment, place)" ng-model="comment" novalidate name="commentForm">
 					<span class="form-group">
 					  <label for="author">Author:</label>
 					  <input type="text" class="form-control" ng-model="comment.author" ng-minlength=1 required />
