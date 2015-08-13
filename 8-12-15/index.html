@@ -57,7 +57,7 @@
 	      </ul>
 	      <form class="navbar-form navbar-left" role="search">
 	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
+	          <input type="text" class="form-control" placeholder="Search" ng-model="search">
 	        </div>
 	      </form>
 	      <ul class="nav navbar-nav navbar-right">
@@ -77,7 +77,7 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-	<!--  *********************** END NAVBAR *********************** -->
+	<!--  ***********************  navbar *********************** -->
 	<div ng-show="showForm" class="form">
 		<form ng-submit="saveForm(form)" ng-model="form" novalidate name="placeForm">
 		  <div class="form-group">
@@ -121,7 +121,7 @@
 
 	<!-- ############### EACH PLACE #####################-->
 	<div id="placeContainer">
-		<div ng-repeat="place in places | orderBy: '-rank'" class="placeBox">
+		<div ng-repeat="place in places | orderBy: '-rank' | filter:search" class="placeBox">
 			<span class="imageContainer">
 				<span><img src="{{place.image}}" class="image"></span>
 			</span>
