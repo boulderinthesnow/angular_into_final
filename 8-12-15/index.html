@@ -160,7 +160,8 @@
 					<!-- interate through comments array for object and show resulting comments -->
 					<div id="commentsContainer">
 						<div ng-show="place.showComments" ng-repeat="comment in place.comments"> 
-							{{comment}}
+							<span style="font-weight: bold;">{{comment.author}}: </span>
+							<span>{{comment.comment}}</span>
 						</div>
 					</div>
 				<!-- ############## show comments ############# -->
