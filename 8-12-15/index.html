@@ -138,7 +138,15 @@
 				<!-- DONE when add comment is touched, create new comment box appears -->
 				<div>
 					<span>{{place.time | amCalendar}} </span> | 
-					<span ng-click="showComments(place)">{{place.comments.length}} Comments</span>  | 
+					<span ng-click="showComments(place)">
+					{{place.comments.length}}
+						<ng-pluralize count="place.comments.length" 
+							when="{'0': 'comments', 
+		                    '1': 'comment', 
+		                    'other': '{{amount | number:2}} comments'}">
+						</ng-pluralize>
+					</span>  | 
+
 					<span ng-click="newComment(place)">Add Comment</span>
 				</div>
 				<!-- ############## COMMENT BOX ############# -->
