@@ -76,7 +76,12 @@
 ## EXERCISE: Explain in as much detail as you can what happens when you click the button. Why does number update in the template without us telling it to?
 #### when the button is clicked the randomNumber function runs. This functions changes the value of the number property of the scope inside clickController. That value update universally when chnaged, including where it shows in the view.
 
-##EXERCISE: Add a button that will reverse some text when clicked. Take a look at the example gif below.
-#### 
+##What are possible issues with this new file structure?
+#### forgetting to reference the correct directory will cause an error.
+#### if elements needs to be references between the js files, it connect be done within the same file
+
+##Why do we want to serve our application in the first place? It seems to work fine when we just open index.html in the browser..
+#### Because opening the index.html file does not simulate what our website would look like when hosted out on the internet -- which is really the point of a website. 
+
 
 
