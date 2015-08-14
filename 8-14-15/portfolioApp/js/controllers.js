@@ -1,11 +1,17 @@
-app.controller("ProjectsController", function($scope){
+app.controller("ProjectsController", ['$scope', '$location', function($scope, $location){
 	$scope.projects = "Projects!"
-})
+	var url = $location.url();
+	console.log(url)
+}])
 
-app.controller("BioController", function($scope){
+app.controller("BioController", ['$scope', '$location', function($scope, $location){
 	$scope.bio = "Bio!"
-})
+	var url = $location.url();
+	console.log(url)
+}])
 
-app.controller("ResumeController", function($scope){
+app.controller("ResumeController", ['$scope', '$location', function($scope, $location){
 	$scope.resume = "Resume!"
-})
+	var url = $location.url();
+	console.log(url)
+}])
