@@ -83,5 +83,9 @@
 ##Why do we want to serve our application in the first place? It seems to work fine when we just open index.html in the browser..
 #### Because opening the index.html file does not simulate what our website would look like when hosted out on the internet -- which is really the point of a website. 
 
+## QUESTION: Why does Angular put a # in the route path?
+#### it sets the base route path in angular
+
+
 
 

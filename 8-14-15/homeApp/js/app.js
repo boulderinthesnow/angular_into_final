@@ -9,4 +9,8 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/dogs.html',
         controller: 'DogsController'
       })
+      .when('/:any', {  // catchall
+        templateUrl: 'partials/home.html',
+        controller: 'DogsController'
+      })
 });
