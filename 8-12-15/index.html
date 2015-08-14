@@ -12,6 +12,7 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -84,7 +85,7 @@
 	</nav>
 
 	<!--  ***********************  navbar *********************** -->
-	<div ng-show="showForm" class="form">
+	<div ng-show="showForm" class="form animated bounceInDown">
 		<form ng-submit="saveForm(form)" ng-model="form" novalidate name="placeForm">
 		  <div class="form-group">
 		    <label for="title">Title:</label>
@@ -127,7 +128,7 @@
 
 	<!-- ############### EACH PLACE #####################-->
 	<div id="placeContainer">
-		<div ng-repeat="place in places | orderBy: '-rank' | filter:search | orderBy: sortBy" class="placeBox">
+		<div ng-repeat="place in places | orderBy: '-rank' | filter:search | orderBy: sortBy" class="placeBox animated fadeIn" >
 			<span class="imageContainer">
 				<span><img src="{{place.image}}" class="image"></span>
 			</span>
@@ -138,9 +139,10 @@
 					<img src="images/up_green_arrow.png" height="20px" ng-click="up(place)">
 					<img src="images/down_red_arrow.png" height="20px" ng-click="down(place)">
 					{{place.rank}}
+			</span>
 				</div >
 				<div style="text-align: right;">By {{place.author}}</div>
-				<span>{{place.description}}</span>
+				<span >{{place.description}}</span>
 				<!-- DONE when add comment is touched, create new comment box appears -->
 				<div>
 					<span>{{place.time | amCalendar}} </span> | 
@@ -156,15 +158,15 @@
 					<span ng-click="newComment(place)">Add Comment</span>
 				</div>
 				<!-- ############## COMMENT BOX ############# -->
-				<div ng-show="place.showComment">
+				<div ng-show="place.showComment" class="animated fadeIn">
 					<form ng-submit="saveComment(comment, place)" ng-model="comment" novalidate name="commentForm">
 					<span class="form-group">
-					  <label for="author">Author:</label>
+					  <!-- <label for="author">Author:</label> -->
 					  <input type="text" class="form-control" ng-model="comment.author" ng-minlength=1 required />
 					</span>
 					<span class="form-group">
-					  <label for="text"></label>
-					  Text: <input type="text" class="form-control" ng-model="comment.text" ng-minlength=1 required />
+					<!--   <label for="text"></label> -->
+						<input type="text" class="form-control" ng-model="comment.text" ng-minlength=1 required />
 					</span>
 						<input type="submit" value="Add Comment">
 					</form>
@@ -172,8 +174,8 @@
 				<!-- ############## comment box ############# -->
 				<!-- ############## SHOW COMMENTS ############# -->
 					<!-- interate through comments array for object and show resulting comments -->
-					<div id="commentsContainer">
-						<div ng-show="place.showComments" ng-repeat="comment in place.comments"> 
+					<div id="commentsContainer" >
+						<div ng-show="place.showComments" ng-repeat="comment in place.comments" class="animated zoomIn"> 
 							<span style="font-weight: bold;">{{comment.author}}: </span>
 							<span>{{comment.comment}}</span>
 						</div>
