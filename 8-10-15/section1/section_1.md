@@ -96,13 +96,13 @@
 #### they are both types of routing. One is run on the client's browser, the other on the server. Client side routing is usually used for single page apps. For servie side apps, AJAX calls are made to provide code from the server to the client side
 
 ##Aside from route definitions, what else can go in a .config()?
-####
+#### custom providers can be added to the route provider. Instances cannot be added, the provider itself must be added
 
 
 ##What is $rootScope?
-####
+#### it is the top most scope, and is parent to all scopes in the app, where all the following scopes inherit it's properties. It is attached to the element wheere ng-app is declared
 
 
 ##What is the $routeChangeSuccess event?
-####
+#### it occurs when a route change has successfully executed.
 
