@@ -25,7 +25,7 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/add.html',
         controller: 'AddController'
       })
-      .when('/divide/:num1/:num2', { 
+      .when('/divide', { 
         templateUrl: 'partials/divide.html',
         controller: 'DivideController'
       })

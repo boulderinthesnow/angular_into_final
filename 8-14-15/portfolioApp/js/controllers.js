@@ -26,7 +26,10 @@ app.controller("AddController", ['$scope', '$location', '$routeParams', function
 }])
 
 app.controller("DivideController", ['$scope', '$location', '$routeParams', function($scope, $location, $routeParams){
-	$scope.divide = parseInt($routeParams.num1) / parseInt($routeParams.num2)
-	$scope.url = $location.url()
-	console.log($scope.divide)
+	// $scope.divide = parseInt($routeParams.num1) / parseInt($routeParams.num2)
+	// $scope.url = $location.url()
+	// console.log($scope.divide)
+	num1 = parseInt($location.$$search.x);
+	num2 = parseInt($location.$$search.y);
+	$scope.divide = (num1 / num2);
 }])
