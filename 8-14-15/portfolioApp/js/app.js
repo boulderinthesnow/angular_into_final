@@ -25,6 +25,10 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/add.html',
         controller: 'AddController'
       })
+      .when('/divide/:num1/:num2', { 
+        templateUrl: 'partials/divide.html',
+        controller: 'DivideController'
+      })
       // .when('/:any', {  // catchall
       //   templateUrl: 'partials/projects.html',
       //   controller: 'ProjectsController',

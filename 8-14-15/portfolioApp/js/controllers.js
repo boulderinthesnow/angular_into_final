@@ -21,12 +21,10 @@ app.controller("AddController", ['$scope', '$location', '$routeParams', function
 	$scope.add = parseInt($routeParams.num1) + parseInt($routeParams.num2)
 	$scope.url = $location.url()
 	console.log($scope.add)
-	// parts = {
-	// 	"vars" : {}
-	// };
-	// absUrl = $location.absUrl();
-	// parts["hashString"] = (absUrl.split("#"))[1];
-	// parts["pathString"] = (absUrl.split("/"));
-	// console.log(parts["pathString"])
+}])
 
+app.controller("DivideController", ['$scope', '$location', '$routeParams', function($scope, $location, $routeParams){
+	$scope.divide = parseInt($routeParams.num1) / parseInt($routeParams.num2)
+	$scope.url = $location.url()
+	console.log($scope.divide)
 }])
