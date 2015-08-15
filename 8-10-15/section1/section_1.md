@@ -86,6 +86,23 @@
 ## QUESTION: Why does Angular put a # in the route path?
 #### it sets the base route path in angular
 
+##Why isn't ngRoute part of Angular core? Name at least 2 other Angular modules we could use
+#### it used to be part of the core, but it was taken out when other frameworks modularized their routing
+#### ngInfiniteScoll -- infinite scrolling for angular
+#### ng-file-upload -- Angular directive to upload files
+#### angular-ui -- companion suite for AngularJS
+
+##Compare and contrast client-side routing with server-side routing
+#### they are both types of routing. One is run on the client's browser, the other on the server. Client side routing is usually used for single page apps. For servie side apps, AJAX calls are made to provide code from the server to the client side
+
+##Aside from route definitions, what else can go in a .config()?
+####
 
 
+##What is $rootScope?
+####
+
+
+##What is the $routeChangeSuccess event?
+####
 
