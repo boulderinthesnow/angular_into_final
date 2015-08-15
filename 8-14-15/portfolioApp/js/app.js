@@ -21,6 +21,10 @@ app.config(function($routeProvider) {
         controller: 'ResumeController',
         routeName: 'resume'
       })
+      .when('/add/:num1/:num2', { 
+        templateUrl: 'partials/add.html',
+        controller: 'AddController'
+      })
       // .when('/:any', {  // catchall
       //   templateUrl: 'partials/projects.html',
       //   controller: 'ProjectsController',
