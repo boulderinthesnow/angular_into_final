@@ -25,6 +25,7 @@
 <body>
 
 <!-- ################# NAVBAR #################  -->
+	{{url}} should be here
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -41,11 +42,15 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active">
-	        	<a href="#projects">Projects <span class="sr-only">(current)</span></a>
+	        <li ng-class="isActive == 'projects' ? 'active' : ' ' ">
+	        	<a href="#projects">Projects</a>
 	        </li>
-	        <li><a href="#bio">Bio</a></li>
-	        <li><a href="#resume">Resume</a></li>
+	        <li ng-class="isActive == 'bio' ? 'active' : ' ' ">
+	        	<a href="#bio">Bio</a>
+	        </li>
+	        <li ng-class="isActive == 'resume' ? 'active' : ' ' ">
+	        	<a href="#resume">Resume</a>
+	        </li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
