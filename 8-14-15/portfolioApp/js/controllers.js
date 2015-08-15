@@ -18,9 +18,11 @@ app.controller("ResumeController", ['$scope', '$location', function($scope, $loc
 }])
 
 app.controller("AddController", ['$scope', '$location', '$routeParams', function($scope, $location, $routeParams){
-	$scope.add = parseInt($routeParams.num1) + parseInt($routeParams.num2)
-	$scope.url = $location.url()
-	console.log($scope.add)
+	// $scope.add = parseInt($routeParams.num1) + parseInt($routeParams.num2)
+	// $scope.url = $location.url()
+	num1 = parseInt($location.$$search.x);
+	num2 = parseInt($location.$$search.y);
+	$scope.add = (num1 + num2);
 }])
 
 app.controller("DivideController", ['$scope', '$location', '$routeParams', function($scope, $location, $routeParams){

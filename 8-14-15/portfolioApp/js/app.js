@@ -21,7 +21,7 @@ app.config(function($routeProvider) {
         controller: 'ResumeController',
         routeName: 'resume'
       })
-      .when('/add/:num1/:num2', { 
+      .when('/add', { 
         templateUrl: 'partials/add.html',
         controller: 'AddController'
       })
