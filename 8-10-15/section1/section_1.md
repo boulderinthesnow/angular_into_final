@@ -105,4 +105,3 @@
 
 ##What is the $routeChangeSuccess event?
 #### it occurs when a route change has successfully executed.
-
