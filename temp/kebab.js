@@ -2,14 +2,16 @@
  	// get the index of the underscore
  	// run to uppercase on the char after that index
 		if (typeof(input) === "string") {
-			 	input = input.replace(/ [a-z]/g, function (g) {
-			 		return g[1].toUpperCase()
-			 	})
-			return input
+ 			var arr = input.split(" ")
+ 			var pigArr = arr.map(function(word) {
+ 				word = word + word[0] +"ay"
+ 				return ( word = word.substring(1, word.length))
+ 			})
+			return pigArr.join(" ")
 		} else {
 			return (input)
 		}
 	}
 
 
-console.log(foo("foo_bar-happy"))
+console.log(foo("happy happy joy joy"))
