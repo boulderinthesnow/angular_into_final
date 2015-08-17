@@ -133,8 +133,13 @@
 		  <p ng-show=""></p>
 		</form>
 	</div>
+<<<<<<< HEAD
 
 	<!-- ############### EACH PLACE #####################-->
+=======
+	<!-- DONE when new post button clicked, show form with title, author, image url, description -->
+	<p>Places array: {{places}}</p>
+>>>>>>> master
 	<div id="placeContainer">
 		<div ng-repeat="place in places | orderBy: '-rank' | filter:search | orderBy: sortBy" class="placeBox animated fadeIn" >
 			<span class="imageContainer">
@@ -143,6 +148,7 @@
 			<span class="textContainer">
 			<!-- add a default ranking of 0, increment if up arrow, decrement if rev -->
 				<div>
+<<<<<<< HEAD
 					{{place.title}} |
 					<i style="font-size: 18px;" class="fa fa-arrow-up fa-6" ng-click="up(place)"></i>
 					<i style="font-size: 18px;" class="fa fa-arrow-down fa-6" ng-click="down(place)"></i>
@@ -192,6 +198,20 @@
 					</div>
 				<!-- ############## show comments ############# -->
 			</span>
+=======
+					{{place.title}}
+					PLACE: {{place}}
+
+					<img src="images/up_green_arrow.png" height="20px" ng-click="place.up(place)">
+					<img src="images/down_red_arrow.png" height="20px" ng-click="place.down()">
+					{{place.rank}}
+					{{place.count}}
+				</div >
+				<div>{{place.author}}</div>
+				<span>{{place.description}}</span>
+				<div>{{place.time | amCalendar}}</div>
+			</span>
+>>>>>>> master
 		</div>
 
 	</div>
