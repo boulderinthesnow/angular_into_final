@@ -43,3 +43,20 @@ app.filter('pigLatin', function () {
 		}
 })
 
+app.filter('redact', function () {
+	return function (input, redWord) {
+		if (typeof(input) === "string") {
+ 			var arr = input.split(" ")
+ 			var wordArr = arr.map(function(word) {
+ 				if (word === redWord ) {
+ 					return ( word = "REDACTED")
+ 				} else {
+ 					return word
+ 				}
+ 			})
+			return wordArr.join(" ")
+		} else {
+			return (input)
+		}
+	}
+})
