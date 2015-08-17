@@ -14,8 +14,8 @@ app.controller("BioController", ['$scope', '$location', '$http', function($scope
 	// 	console.log("foo")
 	// })
 	$http.get('http://localhost:8000/json/itunes.json').then(function(data) {
-		$scope.json = data
-		console.log($scope.json)
+		$scope.songs = data.data.results
+		console.log($scope.songs)
 	})
 }])
 
