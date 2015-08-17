@@ -1,5 +1,6 @@
 var app = angular.module("portfolioApp", ['ngRoute']);
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $httpProvider) {
+    $httpProvider.defaults.withCredentials = true;
     $routeProvider   
       .when('/', {
         templateUrl: 'partials/projects.html',

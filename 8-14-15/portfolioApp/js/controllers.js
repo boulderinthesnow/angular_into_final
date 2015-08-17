@@ -13,9 +13,9 @@ app.controller("BioController", ['$scope', '$location', '$http', function($scope
 	// 	$scope.zenData = data.data
 	// 	console.log("foo")
 	// })
-	$http.get('https://itunes.apple.com/search?term=jack+johnson').then(function(data) {
-		$scope.iData = data
-		console.log($scope.iData)
+	$http.get('http://localhost:8000/json/itunes.json').then(function(data) {
+		$scope.json = data
+		console.log($scope.json)
 	})
 }])
 
