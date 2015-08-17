@@ -9,9 +9,13 @@ app.controller("BioController", ['$scope', '$location', '$http', function($scope
 	$scope.url = $location.url();
 	console.log($scope.url)
 	$scope.bio = "Bio! " + $scope.url
-	$http.get('https://api.github.com/zen').then(function(data) {
-		$scope.zenData = data
-		console.log("foo")
+	// $http.get('https://api.github.com/zen').then(function(data) {
+	// 	$scope.zenData = data.data
+	// 	console.log("foo")
+	// })
+	$http.get('https://itunes.apple.com/search?term=jack+johnson').then(function(data) {
+		$scope.iData = data
+		console.log($scope.iData)
 	})
 }])
 

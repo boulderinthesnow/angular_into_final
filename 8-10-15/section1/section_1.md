@@ -105,3 +105,13 @@
 
 ##What is the $routeChangeSuccess event?
 #### it occurs when a route change has successfully executed.
+
+## EXERCISE: Read about the same origin policy (wikipedia has some good info too) and Cross-Origin Resource Sharing or CORS. Describe what both the same origin policy and CORS are.
+#### same origin policy refers to the idea that a XML request must come from the same machine. This prevents malicious behavior.
+#### CORS refers to the way requests can safely be made across from different sites.
+
+## EXERCISE: Try using $http.get() to make a request to https://itunes.apple.com/search?term=jack+johnson and display the title of every post on your template. You should get an error. What was the error? Why did the api.github.com domain work and not the itunes.com domain?
+#### the request ran into the cross browser security feature of same origin policy. The security of the itunes app is more restricted.
+
+## EXERCISE: Since making a request to https://itunes.apple.com/search?term=jack+johnson didn't work, go to the url in your browser and copy all the json that gets returned. Save the json data into a file in your app called itunes.json. Use the $http.get() service to make a request to get the itunes.json file. Display the title of every post on your template. Why does this method for getting the json data work?
+####
