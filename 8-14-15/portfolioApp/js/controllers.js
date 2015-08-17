@@ -4,11 +4,15 @@ app.controller("ProjectsController", ['$scope', '$location', function($scope, $l
 	console.log($scope.absUrl)
 }])
 
-app.controller("BioController", ['$scope', '$location', function($scope, $location){
+app.controller("BioController", ['$scope', '$location', '$http', function($scope, $location, $http){
 	
 	$scope.url = $location.url();
 	console.log($scope.url)
 	$scope.bio = "Bio! " + $scope.url
+	$http.get('https://api.github.com/zen').then(function(data) {
+		$scope.zenData = data
+		console.log("foo")
+	})
 }])
 
 app.controller("ResumeController", ['$scope', '$location', function($scope, $location){
