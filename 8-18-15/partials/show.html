@@ -1,0 +1,18 @@
+
+<form ng-submit="searchDb()">
+	<input type="text" ng-model="searchData">
+	<input type="submit">
+</form>
+<h1>Movies:</h1>
+<div ng-repeat="movie in movieResults">
+	
+
+	<div class="row">
+		 <div class="col-sm-6 col-md-4 movie">
+		     <h3>{{movie.Title}}</h3>
+		     <h3>{{movie.Year}}</h3>
+		     <h3>{{movie.imdbID}}</h3>
+		     <h3>{{movie.Type}}</h3>
+		 </div>
+	</div>
+</div>
