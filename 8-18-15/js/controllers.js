@@ -12,6 +12,18 @@ app.controller("MovieController", ['$scope', '$location', '$http', function($sco
 			console.log("Houston, we have a problem")
 		})
 	}
+
+	$scope.showMovie = function (title) {
+		// $location.path('/')
+		console.log(title)
+		$http.get(searchUrl).then(function(res) {
+			$scope.movieResults = res.data.Search
+			console.log($scope.movieResults)
+			
+		}, function(response) {
+			console.log("Houston, we have a problem")
+		})
+	}
 }]);
 
 // encodeURIComponent($routeParams)
