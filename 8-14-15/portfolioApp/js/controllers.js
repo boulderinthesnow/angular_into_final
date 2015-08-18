@@ -19,10 +19,15 @@ app.controller("BioController", ['$scope', '$location', '$http', function($scope
 	})
 }])
 
-app.controller("ResumeController", ['$scope', '$location', function($scope, $location){
+app.controller("ResumeController", ['$scope', '$location', '$http', function($scope, $location, $http){
 	$scope.resume = "Resume!"
 	$scope.url = $location.url();
-	console.log($scope.url)
+	$http.get('http://localhost:8000/json/itunessss.json').then(function(data) {
+		$scope.songs = data.data.results
+		console.log($scope.songs)
+	}, function(response) {
+		console.log("Houston, we have a problem")
+	})
 }])
 
 app.controller("AddController", ['$scope', '$location', '$routeParams', function($scope, $location, $routeParams){
