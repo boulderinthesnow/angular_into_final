@@ -9,14 +9,17 @@ app.controller("ChatController", ['$scope', '$location', '$http', function($scop
 		console.log("Houston, we have a problem")
 	})
 
-	$http.post('https://shielded-peak-6345.herokuapp.com/', {message:{
-		name: "Donald Trump",
-		content: "if you get in my way there will be hell toupee!"
-	}}).then(function(data) {
-		$scope.sent = data
-		console.log($scope.sent)
-	}, function(response) {
-		console.log("Houston, we have a problem")
-	})
+ $scope.message = {};
+
+	$scope.submitPost = function() {
+		$http.post('https://shielded-peak-6345.herokuapp.com/messages', $scope.message).then(function(data) {
+			$scope.sent = data
+			console.log($scope.sent)
+		}, function(response) {
+			console.log("Houston, we have a problem")
+		})
+	}
+
+
 
 }])

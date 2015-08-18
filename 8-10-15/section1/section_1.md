@@ -115,3 +115,18 @@
 
 ## EXERCISE: Since making a request to https://itunes.apple.com/search?term=jack+johnson didn't work, go to the url in your browser and copy all the json that gets returned. Save the json data into a file in your app called itunes.json. Use the $http.get() service to make a request to get the itunes.json file. Display the title of every post on your template. Why does this method for getting the json data work?
 ####
+
+##What is a service? Is there a Ruby or JavaScript equivalent to Angular services?
+#### A service is objects that only instantiate when they are needed. It also only gets instantiated once per application. It is used to share data and functions across the application.
+
+##Explain in as much detail as possible what happens under the hood of $http.get()
+#### it sends a request to some url, and then runs a callback function with the data that returns from the request. Optionally it has a separate callback to handle error conditions.
+
+##What is $q and how does it relate to $http?
+#### $http executes multiple requests  all one once, where $g execuates async requests one after another. Generally, for a single HTTP call use $http, and when having many calls use $q
+
+
+
+
+
+
