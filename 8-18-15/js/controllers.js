@@ -5,10 +5,10 @@ app.controller("MovieController",
 		$scope.searchDb = function () {
 			var searchUrl = 'http://www.omdbapi.com/?s=' + $routeParams.query
 			// $location.path('/')
-			console.log(searchUrl)
+			// console.log(searchUrl)
 			$http.get(searchUrl).then(function(res) {
 				$scope.movieResults = res.data.Search
-				console.log($scope.movieResults)
+				// console.log($scope.movieResults)
 				
 			}, function(response) {
 				console.log("Houston, we have a problem")
@@ -18,12 +18,14 @@ app.controller("MovieController",
 
 	$scope.showMovie = function (title) {
 		// $location.path('/movie')
-		console.log(title)
+		// console.log(title,"*********TITLE**********");	
 		var searchUrl = 'http://www.omdbapi.com/?t=' + encodeURIComponent(title)
+		// console.log(searchUrl,"*********SEARCHURL**********");
 		$http.get(searchUrl).then(function(res) {
-			$scope.movieResults = res.data.Search
+			// console.log(res,"*********RES**********");
+			$scope.movieResults = res.data
 			console.log($scope.movieResults)
-			
+			$location.path('/movie/' + (title))
 		}, function(response) {
 			console.log("Houston, we have a problem")
 		})
