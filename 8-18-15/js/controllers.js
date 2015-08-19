@@ -16,20 +16,6 @@ app.controller("MovieController",
 		}()
 	}
 
-	// $scope.showMovie = function (title) {
-	// 	// var deferred = $q.defer();
-	// 	var searchUrl = 'http://www.omdbapi.com/?t=' + encodeURIComponent(title)
-	// 	// console.log(searchUrl,"*********SEARCHURL**********");
-	// 	$http.get(searchUrl).then(function(res) {
-	// 		// console.log(res,"*********RES**********");
-	// 		$scope.oneMovieResults = res.data
-	// 		console.log($scope.oneMovieResults)
-	// 		$location.path('/movie/' + (title))
-	// 	}, function(response) {
-	// 		console.log("Houston, we have a problem")
-	// 	})
-	// }
-
 }]);
 
 app.controller("OneMovieController", ['$scope', '$location', '$http', '$routeParams', function($scope, $location, $http, $routeParams){

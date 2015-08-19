@@ -125,6 +125,17 @@
 ##What is $q and how does it relate to $http?
 #### $http executes multiple requests  all one once, where $g execuates async requests one after another. Generally, for a single HTTP call use $http, and when having many calls use $q
 
+##EXERCISE: Look at an angular app you have made previous (reddit clone or your portfolio site). What dependencies are there? Where do you see dependencies other than the contoller?
+#### in my app I used the $scope, $location and $http dependencis. There can potentially be many more than that. 
+
+##EXERCISE: In the above example (MathController) does the order of the dependencies matter? Does $scope have to come before $routeParams? Do the names matter? Could we name them something else?
+#### the order does not matter, but the names do matter as they reference things we are calling on but not defining. 
+
+##EXERCISE: DO NOT SKIP THIS EXERCISE. In production code, you typically want your javascript file to be as small as possible so that it can be downloaded faster. To make the files smaller, developers minify their js files. Find a minification tool and minify your js code. Update your html file so that it now points to your newly minified js files. Does your angular app still work? If it stopped working, what is the problem?
+####
+
+##EXERCISE: So far we have mainly seen one way to do dependency injection. Research and figure out the other two ways. Which one is the best practice?
+####
 
 
 
