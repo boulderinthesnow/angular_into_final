@@ -7,12 +7,12 @@
 <h1>Movies:</h1>
 <div ng-repeat="movie in movieResults">	
 	<a href="#/movie/{{movie.Title}}">
-		<div class="row">
-			 <div class="col-sm-6 col-md-4 movie" >
+		<div class="container movie" style="text-align:center;"> 
+		  	  <div class="row">
 			     <h3>{{movie.Title}}</h3>
 			     <h3>{{movie.Year}}</h3>
-			     <h3>{{movie.imdbID}}</h3>
-			     <h3>{{movie.Type}}</h3>
+<!-- 			     <h3>{{movie.imdbID}}</h3>
+			     <h3>{{movie.Type}}</h3> -->
 			 </div>
 		</div>
 	</a>

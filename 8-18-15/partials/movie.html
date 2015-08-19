@@ -1,8 +1,14 @@
 <p>Movie page</p>
-<div>
-	<div>{{movieResults.Title}}</div>
-	<div>{{movieResults.Title}}</div>
-	<div>{{movieResults.Title}}</div>
-	<div>{{movieResults.Title}}</div>
-	<div>{{movieResults.Title}}</div>
+<div class="container">
+	<div div class="row" style="background:grey; text-align: center;">
+		<div>Title: {{movieResults.Title}}</div>
+		<div><img src="{{movieResults.Poster}}" alt="" height="120px"></div>
+		<div>Year: {{movieResults.Year}}</div>
+		<div>Rating: {{movieResults.Ratd}}</div>
+		<div>Release: {{movieResults.Released}}</div>
+		<div>Runtime: {{movieResults.Runtime}}</div>
+		<div>{{movieResults.Awards}}</div>
+		<div>{{movieResults.Plot}}</div>
+		<div>Rating: {{movieResults.imdbRating}}</div>
+	</div>
 </div>

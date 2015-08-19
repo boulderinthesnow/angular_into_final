@@ -23,13 +23,16 @@
   
 </head>
 <body>
-	<p>SEARCH FOR A MOVIE</p>
-
-  <div ng-controller="SearchController">
-    <form ng-submit="searchDb()">
-      <input type="text" ng-model="searchData">
-      <input type="submit">
-    </form>
+  <div class="container" style="text-align:center;"> 
+    <div class="row">
+	   <p>SEARCH FOR A MOVIE</p>
+      <div ng-controller="SearchController">
+        <form ng-submit="searchDb()">
+          <input type="text" ng-model="searchData">
+          <input type="submit">
+        </form>
+      </div>
+    </div>
   </div>
 
 	<div ng-view></div>
