@@ -6,4 +6,11 @@ app.config(function($routeProvider, $httpProvider) {
         templateUrl: '/partials/show.html',
         controller: 'MovieController'
       })
+    $routeProvider
+      .when('/show/:query', {
+        templateUrl: '/partials/show.html',
+        controller: 'MovieController'
+    })
+
+
   })
