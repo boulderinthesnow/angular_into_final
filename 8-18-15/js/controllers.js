@@ -23,8 +23,8 @@ app.controller("MovieController",
 		// console.log(searchUrl,"*********SEARCHURL**********");
 		$http.get(searchUrl).then(function(res) {
 			// console.log(res,"*********RES**********");
-			$scope.movieResults = res.data
-			console.log($scope.movieResults)
+			$scope.oneMovieResults = res.data
+			console.log($scope.oneMovieResults)
 			$location.path('/movie/' + (title))
 		}, function(response) {
 			console.log("Houston, we have a problem")
