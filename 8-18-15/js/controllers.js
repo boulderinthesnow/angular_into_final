@@ -16,22 +16,38 @@ app.controller("MovieController",
 		}()
 	}
 
-	$scope.showMovie = function (title) {
-		// $location.path('/movie')
-		// console.log(title,"*********TITLE**********");	
-		var searchUrl = 'http://www.omdbapi.com/?t=' + encodeURIComponent(title)
-		// console.log(searchUrl,"*********SEARCHURL**********");
+	// $scope.showMovie = function (title) {
+	// 	// var deferred = $q.defer();
+	// 	var searchUrl = 'http://www.omdbapi.com/?t=' + encodeURIComponent(title)
+	// 	// console.log(searchUrl,"*********SEARCHURL**********");
+	// 	$http.get(searchUrl).then(function(res) {
+	// 		// console.log(res,"*********RES**********");
+	// 		$scope.oneMovieResults = res.data
+	// 		console.log($scope.oneMovieResults)
+	// 		$location.path('/movie/' + (title))
+	// 	}, function(response) {
+	// 		console.log("Houston, we have a problem")
+	// 	})
+	// }
+
+}]);
+
+app.controller("OneMovieController", ['$scope', '$location', '$http', '$routeParams', function($scope, $location, $http, $routeParams){
+	$scope.searchDb = function () {
+		var searchUrl = 'http://www.omdbapi.com/?t=' + $routeParams.query
+		// $location.path('/')
+		console.log(searchUrl)
 		$http.get(searchUrl).then(function(res) {
-			// console.log(res,"*********RES**********");
-			$scope.oneMovieResults = res.data
-			console.log($scope.oneMovieResults)
-			$location.path('/movie/' + (title))
+			$scope.movieResults = res.data
+			console.log($scope.movieResults)
+			
 		}, function(response) {
 			console.log("Houston, we have a problem")
 		})
-	}
-
+	}()
 }]);
+
+
 
 // encodeURIComponent($routeParams)
 

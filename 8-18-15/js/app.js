@@ -12,6 +12,6 @@ app.config(function($routeProvider, $httpProvider) {
       })
       .when('/movie/:query', {
         templateUrl: '/partials/movie.html',
-        controller: 'MovieController'
+        controller: 'OneMovieController'
     })
   })
