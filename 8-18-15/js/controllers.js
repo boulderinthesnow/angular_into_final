@@ -1,47 +1,26 @@
-app.controller("MovieController", 
-	['$scope', '$location', '$http', '$routeParams', function($scope, $location, $http, $routeParams)  {
-	// console.log($routeParams.query)
-	if ($routeParams.query) {
-		$scope.searchDb = function () {
-			var searchUrl = 'http://www.omdbapi.com/?s=' + $routeParams.query
-			// $location.path('/')
-			// console.log(searchUrl)
-			$http.get(searchUrl).then(function(res) {
-				$scope.movieResults = res.data.Search
-				// console.log($scope.movieResults)
-				
-			}, function(response) {
-				console.log("Houston, we have a problem")
-			})
-		}()
-	}
-
+app.controller("MovieController", ["$scope", "$location", "$http", "$routeParams", function(a, e, b, c) {
+  c.query && (a.searchDb = function() {
+    b.get("http://www.omdbapi.com/?s=" + c.query).then(function(d) {
+      a.movieResults = d.data.Search;
+    }, function(a) {
+      console.log("Houston, we have a problem");
+    });
+  }());
 }]);
-
-app.controller("OneMovieController", ['$scope', '$location', '$http', '$routeParams', function($scope, $location, $http, $routeParams){
-	$scope.searchDb = function () {
-		var searchUrl = 'http://www.omdbapi.com/?t=' + $routeParams.query
-		// $location.path('/')
-		console.log(searchUrl)
-		$http.get(searchUrl).then(function(res) {
-			$scope.movieResults = res.data
-			console.log($scope.movieResults)
-			
-		}, function(response) {
-			console.log("Houston, we have a problem")
-		})
-	}()
+app.controller("OneMovieController", ["$scope", "$location", "$http", "$routeParams", function(a, e, b, c) {
+  a.searchDb = function() {
+    var d = "http://www.omdbapi.com/?t=" + c.query;
+    console.log(d);
+    b.get(d).then(function(b) {
+      a.movieResults = b.data;
+      console.log(a.movieResults);
+    }, function(a) {
+      console.log("Houston, we have a problem");
+    });
+  }();
 }]);
-
-
-
-// encodeURIComponent($routeParams)
-
-app.controller("SearchController", ['$scope', '$location', '$http', function($scope, $location, $http){
-	// console.log($scope.searchData)
-	$scope.searchDb = function () {
-		$location.path('/show/' + encodeURIComponent($scope.searchData))
-	}
-
+app.controller("SearchController", ["$scope", "$location", "$http", function(a, e, b) {
+  a.searchDb = function() {
+    e.path("/show/" + encodeURIComponent(a.searchData));
+  };
 }]);
-
