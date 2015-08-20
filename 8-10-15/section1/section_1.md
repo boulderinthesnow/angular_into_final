@@ -137,6 +137,11 @@
 ##EXERCISE: So far we have mainly seen one way to do dependency injection. Research and figure out the other two ways. Which one is the best practice?
 #### Factory methods, module methods and controllers are the 3 places where dependecy injection can occur.
 
+##EXERCISE: When using inline array annotation does the order of anything matter? What order should match?
+#### yes, the order matters, as the references need to refer to the minified variable names in the correcr order
+##EXERCISE: Name at least 3 angular built in services that we have used so far.
+#### http, scope, location
+
 
 
 

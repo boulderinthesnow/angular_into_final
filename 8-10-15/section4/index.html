@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>	
-	<script src="app.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -14,6 +13,14 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script> -->
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/directives.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/services.js"></script>
+	<!-- <link rel="stylesheet" href="css/style.css"> -->
 </head>
 <body >
 
@@ -69,7 +76,7 @@
 		}
 	</style>
 
-	<div ng-controller="MyFirstController">
+<!-- 	<div ng-controller="MyFirstController">
 		<h1>My name is: {{name}}</h1>
 		<input type="text" placeholder="What be your name, fool">
 	</div>
@@ -160,11 +167,11 @@
 			Reverse!
 		</button>
 	</div>
-	<br>
+	<br> -->
 
 	<!-- ********************** PING PONG *********************** -->
 
-	<div ng-controller="pingPongController">
+<!-- 	<div ng-controller="pingPongController">
 	<div id="container">
 		<div ng-click="incrementOne()" ng-model="playerOne" id="squareOne" ng-class="{green_bg: playerOne === 11, red_bg: playerTwo === 11, salmon_bg: playerOne < 11}">
 			<h1 >{{playerOne}}</h1>
@@ -176,50 +183,50 @@
 		</div>
 	</div>	
 		<button ng-click="reset()">Reset</button>
-	</div>
+	</div> -->
 
 	<!-- CONTACT ************************************  -->
-	<div ng-controller="contactController" style="clear:both">
-	<form ng-submit="saveContact(newContact)" ng-model="newContact">
-		Name<input type="text" ng-model="newContact.cName">
-		Email<input type="email" ng-model="newContact.cEmail">
-		Phone<input type="text" ng-model="newContact.cPhone">
-		<input type="submit" value="Foo">
-	</form>
-	<input type="text" name="" id="" ng-model="search">
-
-	<div>
-		<table>
-			<tr>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Phone</th>
+	<div ng-controller="ContactController" style="clear:both">
+		<form ng-submit="saveContact(newContact)" ng-model="newContact">
+			Name<input type="text" ng-model="newContact.cName">
+			Email<input type="email" ng-model="newContact.cEmail">
+			Phone<input type="text" ng-model="newContact.cPhone">
+			<input type="submit" value="Add Contact">
+		</form>
+		<input type="text" name="" id="" ng-model="search">
+		<div>foo: {{contactData[0]}}</div>
+		<div>
+			<table>
 				<tr>
-					<td>{{newContact.cName}}</td>
-					<td>{{newContact.cEmail}}</td>
-					<td>{{newContact.cPhone}}</td>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<tr>
+						<td>{{newContact.cName}}</td>
+						<td>{{newContact.cEmail}}</td>
+						<td>{{newContact.cPhone}}</td>
+					</tr>
 				</tr>
-			</tr>
-		</table>
-		
-	</div>
+			</table>
+			
+		</div>
 
-	<table class="table table-striped" style="text-align:center; width:900px;" ng-model="contact">
-	           <thead>
-	               <tr style="font-weight:bold">
-	               <td>Name</td>
-	               <td>Email</td>
-	               <td>Phone</td>
-	               </tr>
-	           </thead>
-	           <tbody>
-	               <tr ng-repeat="contact in contacts | filter:search" >
-		               <td>{{newContact.cName}}</td>
-		               <td>{{newContact.cEmail}}</td>
-		               <td>{{newContact.cPhone}}</td>
-	               </tr>
-	           </tbody>
-	       </table>
+		<table class="table table-striped" style="text-align:center; width:900px;" ng-model="contact">
+		           <thead>
+		               <tr style="font-weight:bold">
+		               <td>Name</td>
+		               <td>Email</td>
+		               <td>Phone</td>
+		               </tr>
+		           </thead>
+		           <tbody>
+		               <tr ng-repeat="contact in contactData | filter:search" >
+			               <td>{{contact.name}}</td>
+			               <td>{{contact.email}}</td>
+			               <td>{{contact.phone}}</td>
+		               </tr>
+		           </tbody>
+		</table>
 	</div>
 </body>
 </html>
