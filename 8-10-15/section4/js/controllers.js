@@ -19,30 +19,69 @@ app.controller('ContactController', ["$scope", "ContactList", function($scope, C
    
 }]);   
 
-app.controller('ShowController', ["$scope", "ContactList", '$http', '$routeParams', function($scope, ContactList, $http, $routeParams){
+app.controller('ShowController', ["$scope", "ContactList", '$http', '$routeParams', '$q', function($scope, ContactList, $http, $routeParams, $q){
 	$scope.contactData = ContactList.contactList;
 	$scope.routeName = $routeParams.id
 
-	var showOneContact = function () {
+	//GOAL: move the printing of the name and email to occur after $http req comes back using promises
+	// var showOneContact = function () {
+	// 	$scope.contactData.forEach(function(contact) {
+	// 		if (contact.name === $routeParams.id) {
+	// 			function sendScopeWhenPromiseReturns () {
+	// 				return $q(function(resolve, reject) {
+	// 					setTimeout(function() {
+	// 						if (foo) {
+	// 							resolve(console.log("BAR"))
+	// 						} else {
+	// 							reject("soup")
+	// 						}
+	// 					}, 1000)
+	// 				})
+	// 			} // END FUNCTION
+
+	// 			var promise = sendScopeWhenPromiseReturns()
+
+
+
+
+	// 				$scope.returnData = contact
+	// 				gifySearch = "http://api.giphy.com/v1/gifs/search?q=" + encodeURIComponent(x.name) + "&api_key=dc6zaTOxFJmzC"
+	// 				console.log(gifySearch)
+	// 				$http.get(gifySearch).
+	// 					then(function(response) {
+	// 						$scope.userGif = response.data.data[0].embed_url
+	// 						console.log(response.data.data[0].embed_url)
+
+	// 					}, function(response) {
+
+	// 					});
+				
+	// 		};
+	// 	})
+	// }; // END FUNCTION
+	// showOneContact()
+
+	// var showOneContact = function () {
 		$scope.contactData.forEach(function(x) {
 			if (x.name === $routeParams.id) {
 				// console.log("NAME FOUND")
+				// $scope.returnData = {name: "matthew", email: "foo@foo.foo", phone: 555555555}
 				$scope.returnData = x
 				gifySearch = "http://api.giphy.com/v1/gifs/search?q=" + encodeURIComponent(x.name) + "&api_key=dc6zaTOxFJmzC"
 				console.log(gifySearch)
 				$http.get(gifySearch).
 					then(function(response) {
-						$scope.userGif = response.data.data[0].embed_url
-						console.log(response.data.data[0].embed_url)
+						$scope.userGif = response.data.data[0].images.fixed_width_small.url
+						console.log(response.data.data[0].images.fixed_width_small.url)
 
 					}, function(response) {
 
 					});
-			};
-		})
-	}; // END FUNCTION
+			}; // END IF
+		}) // END LOOP
+	// }; // END FUNCTION
 
-	showOneContact()
+	
 
 
 
