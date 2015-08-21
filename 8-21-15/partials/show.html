@@ -1,5 +1,6 @@
 <h3>Feast your eyes upon these teas:</h3>
 
+<!-- ########## TEA TABLE ##########-->
 <div class="container">
 	<table class="table">
 		<thead>
@@ -16,7 +17,7 @@
 				</td>
 				<td>
 					<p>{{tea.name}}</p>
-					<p>{{tea.price}}</p>
+					<p>{{tea.price | cents}}</p>
 					<p>{{tea.caffeineScale}}</p>
 					<p>{{tea.ingredients}}</p>
 					<p>{{tea.rating}}</p>
@@ -28,3 +29,5 @@
 		</tbody>
 	</table>
 </div>
+<!-- ########## tea table ##########-->
+
