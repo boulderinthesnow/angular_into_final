@@ -11,8 +11,18 @@
 		</thead>
 		<tbody ng-repeat="tea in teaArray">
 			<tr>
-				<td>{{tea}}</td>
-				<td>FOO</td>
+				<td>
+					<img src="{{tea.imageUrl}}">
+				</td>
+				<td>
+					<p>{{tea.name}}</p>
+					<p>{{tea.price}}</p>
+					<p>{{tea.caffeineScale}}</p>
+					<p>{{tea.ingredients}}</p>
+					<p>{{tea.rating}}</p>
+					<p>{{tea.inStock}}</p>
+					<p>{{tea.categories}}</p>
+				</td>
 				<td>FOO</td>
 			</tr>
 		</tbody>
