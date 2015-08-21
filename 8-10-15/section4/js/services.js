@@ -8,7 +8,18 @@ app.factory('ContactList', function() {
   };
 
   ContactList.findContact = function(name) {
-    // TODO
+    console.log(name, "you made it!")
+
+    console.log(ContactList.contactList,"*********THECONTACTLIST.CONTACTLIST**********");
+    for (each in ContactList.contactList) {
+      console.log(each.name,"*********EACH.NAME**********");
+    console.log(name,"*********NAME**********");
+    
+      if (each.name === name) {
+        console.log("name found")
+      }
+    }
+
   };
 
   ContactList.removeContact = function(index) {
@@ -17,3 +28,8 @@ app.factory('ContactList', function() {
 
   return ContactList;
 });
+
+
+// if the name in the path is found in the array, print that name to the show.html page
+
+// first make it work in the controller, than move it to the services

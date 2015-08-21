@@ -14,7 +14,7 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-	<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script> -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/directives.js"></script>
@@ -220,13 +220,22 @@
 		               </tr>
 		           </thead>
 		           <tbody>
-		               <tr ng-repeat="contact in contactData | filter:search" >
-			               <td>{{contact.name}}</td>
-			               <td>{{contact.email}}</td>
-			               <td>{{contact.phone}}</td>
-		               </tr>
+		           	   <div>
+			               <tr ng-repeat="contact in contactData | filter:search">
+			               			
+				               		<div >
+						               <td> <a href="#/show/{{contact.name}}"> {{contact.name}} </a></td>
+						               <td>{{contact.email}}</td>
+						               <td>{{contact.phone}}</td>
+					               </div>
+					               
+				            
+			               </tr>
+		               </div>
 		           </tbody>
 		</table>
 	</div>
+
+	<div ng-view> </div>
 </body>
 </html>
