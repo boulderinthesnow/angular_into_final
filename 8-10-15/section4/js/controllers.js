@@ -10,29 +10,42 @@ app.controller('ContactController', ["$scope", "ContactList", function($scope, C
 	   	email:$scope.newContact.cEmail,
 	   	phone:$scope.newContact.cPhone
 	   });
-	   // console.log($scope.newContact)
-	    // console.log(ContactList)
+
    };
 
    $scope.findContact = function (contact) {
    	ContactList.findContact(contact)
-   	// console.log("scooby snacks" + contact)
    }
    
 }]);   
 
-app.controller('ShowController', ["$scope", "ContactList", '$routeParams', function($scope, ContactList, $routeParams){
+app.controller('ShowController', ["$scope", "ContactList", '$http', '$routeParams', function($scope, ContactList, $http, $routeParams){
 	$scope.contactData = ContactList.contactList;
-	console.log($routeParams.id)
-	console.log($scope.contactData,"*********$SCOPE.CONTACTDATA**********");		
-	console.log($scope.contactData[0].name,"*********$SCOPE.CONTACTDATA0000**********");
 	$scope.routeName = $routeParams.id
-	$scope.contactData.forEach(function(x) {
-		if (x.name === $routeParams.id) {
-			console.log("NAME FOUND")
-			$scope.returnData = x
-		};
-	})
+
+	var showOneContact = function () {
+		$scope.contactData.forEach(function(x) {
+			if (x.name === $routeParams.id) {
+				// console.log("NAME FOUND")
+				$scope.returnData = x
+				gifySearch = "http://api.giphy.com/v1/gifs/search?q=" + encodeURIComponent(x.name) + "&api_key=dc6zaTOxFJmzC"
+				console.log(gifySearch)
+				$http.get(gifySearch).
+					then(function(response) {
+						$scope.userGif = response.data.data[0].embed_url
+						console.log(response.data.data[0].embed_url)
+
+					}, function(response) {
+
+					});
+			};
+		})
+	}; // END FUNCTION
+
+	showOneContact()
+
+
+
 
 }]);   
 

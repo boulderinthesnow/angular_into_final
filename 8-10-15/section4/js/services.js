@@ -8,17 +8,7 @@ app.factory('ContactList', function() {
   };
 
   ContactList.findContact = function(name) {
-    console.log(name, "you made it!")
 
-    console.log(ContactList.contactList,"*********THECONTACTLIST.CONTACTLIST**********");
-    for (each in ContactList.contactList) {
-      console.log(each.name,"*********EACH.NAME**********");
-    console.log(name,"*********NAME**********");
-    
-      if (each.name === name) {
-        console.log("name found")
-      }
-    }
 
   };
 
