@@ -61,11 +61,9 @@ app.controller('ShowController', ["$scope", "ContactList", '$http', '$routeParam
 	// }; // END FUNCTION
 	// showOneContact()
 
-	// var showOneContact = function () {
+	var showOneContact = function () {
 		$scope.contactData.forEach(function(x) {
 			if (x.name === $routeParams.id) {
-				// console.log("NAME FOUND")
-				// $scope.returnData = {name: "matthew", email: "foo@foo.foo", phone: 555555555}
 				$scope.returnData = x
 				gifySearch = "http://api.giphy.com/v1/gifs/search?q=" + encodeURIComponent(x.name) + "&api_key=dc6zaTOxFJmzC"
 				console.log(gifySearch)
@@ -79,7 +77,7 @@ app.controller('ShowController', ["$scope", "ContactList", '$http', '$routeParam
 					});
 			}; // END IF
 		}) // END LOOP
-	// }; // END FUNCTION
+	}; // END FUNCTION
 
 	
 
