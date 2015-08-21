@@ -1,13 +1,13 @@
 app.controller("ShowController", ['$scope', '$http', function($scope, $http){
-	// function showAllTea() {
+	 var showAllTea = function () {
 		$http.get('http://localhost:8000/json/data.json').then(function(data) {
-			console.log(data, "FOO")
-		})
-		// , function(response) {
-		// 	console.log("ruh roh...")
-		// })
-		
-	// }() // END FUNCTION
+			$scope.teaArray = data.data
+			console.log($scope.teaArray)
+		}
+		, function(response) {
+			console.log("ruh roh...")
+		})	
+	}() // END FUNCTION
 }])
 
 
