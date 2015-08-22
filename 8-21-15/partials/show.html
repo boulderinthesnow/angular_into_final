@@ -34,7 +34,12 @@
 					<img src="{{tea.imageUrl}}">
 				</td>
 				<td>
-					<p>{{tea.name}}</p>
+					<p>
+						<div id="textBox" style="clear: both;">
+							<p class="alignLeft">{{tea.name}}</p>
+							<p class="alignLeft"> Quantity</p>
+						</div>
+					</p>
 					<p>Price: {{tea.price | cents}}</p>
 					<p>Caffine Rating: {{tea.caffeineScale}}</p>
 					<p>Ingredients: {{tea.ingredients}}</p>
