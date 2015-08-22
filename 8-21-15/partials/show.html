@@ -1,4 +1,3 @@
-<h3>Feast your eyes upon these teas:</h3>
 
 <div>
 	<span>Search by category: 
@@ -29,7 +28,7 @@
 				<th>priceSortThingy</th>
 			</tr>
 		</thead>
-		<tbody ng-repeat="tea in teaArray">
+		<tbody ng-repeat="tea in teaArray | filter:nameSearch">
 			<tr>
 				<td>
 					<img src="{{tea.imageUrl}}">
