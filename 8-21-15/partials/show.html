@@ -17,12 +17,15 @@
 				</td>
 				<td>
 					<p>{{tea.name}}</p>
-					<p>{{tea.price | cents}}</p>
+					<p>Price: {{tea.price | cents}}</p>
 					<p>Caffine Rating: {{tea.caffeineScale}}</p>
-					<p>{{tea.ingredients}}</p>
-					<p>{{tea.rating}}</p>
+					<p>Ingredients: {{tea.ingredients}}</p>
+					<p>Rating: {{tea.rating}}</p>
 					<p>In Stock: {{tea.inStock | booleanConverter}}</p>
-					<p>{{tea.categories}}</p>
+					<p>Categories:</p>
+					<ul>
+						<li ng-repeat="category in tea.categories">{{category}}</li>
+					</ul>
 				</td>
 				<td>FOO</td>
 			</tr>
