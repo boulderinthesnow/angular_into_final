@@ -1,7 +1,7 @@
 
 <div>
 	<span>Search by category: 
-		<select>
+		<select ng-model="categorySearch">
 			<option value="dark">Dark</option>
 			<option value="cold">Cold</option>
 			<option value="awesome">Awesome</option>
@@ -31,7 +31,7 @@
 				<th>priceSortThingy</th>
 			</tr>
 		</thead>
-		<tbody ng-repeat="tea in teaArray | filter:nameSearch">
+		<tbody ng-repeat="tea in teaArray | filter:nameSearch | filter:categorySearch">
 			<tr>
 				<td>
 					<img src="{{tea.imageUrl}}">
