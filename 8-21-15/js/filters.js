@@ -1,15 +1,11 @@
 app.filter('cents', function () { 
 	 return function (input) {
-	 	console.log(input)
 			if (input) {
-				// console.log(typeof(input));
 				var splitUp = input.toString().split("");
 
 				count = 0
 				arr = []
 				for (i = splitUp.length-1 ; i >= 0 ; i--) {
-					// console.log(splitUp[i])
-					// console.log(i,"*********I**********");
 					if (i === splitUp.length-2) {
 						arr.push("." + splitUp[i])
 					} else {
@@ -26,3 +22,13 @@ app.filter('cents', function () {
 			}
 		}
 })
+
+app.filter('booleanConverter', function () {
+	return function (input) {
+		if (input === true) {
+			return "yes"
+		} else {
+			return "no"
+		}
+	} // END FUNCTION
+}) // END FILTER
