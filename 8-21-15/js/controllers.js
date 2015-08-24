@@ -44,8 +44,16 @@ app.controller("ShoppingController", ['$scope', 'ShoppingCart', '$http', functio
 		$scope.total = $scope.teaArray.map(function(tea) {
 					console.log(tea.quantity * tea.price, "IHBVLIBVHIUVHJIUVJKGVJK")
 					return tea.quantity * tea.price
-				})
+				}) // END MAP
 				.reduce(function(x,y) {return x+y})
-	}
+	} // END FUNCTION
+
+	$scope.delete = function (name) {
+		for(var i = $scope.teaArray.length - 1; i >= 0; i--) {
+		    if ($scope.teaArray[i].name === name) {
+		       $scope.teaArray.splice(i, 1);
+		    } // END IF
+		} // END FOR LOOP
+	} // END FUNCTION
 
 }]) // END CONTROLLER
