@@ -20,6 +20,6 @@ app.controller("ShowController", ['$scope', '$http', 'ShoppingCart', '$location'
 }]) // END CONTROLLER
 
 
-app.controller("ShoppingController", ['$scope', 'ShoppingCart', function($scope, ShoppingCart){
-	console.log(ShoppingCart.shoppingCart)
+app.controller("ShoppingController", ['$scope', 'ShoppingCart', '$http', function($scope, ShoppingCart, $http){
+	$scope.teaArray = ShoppingCart.shoppingCart
 }]) // END CONTROLLER

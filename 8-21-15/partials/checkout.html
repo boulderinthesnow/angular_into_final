@@ -1,1 +1,59 @@
-<h1>checkout</h1>
+
+
+<!-- ########## TEA TABLE ##########-->
+<div>
+	<span class="alignLeft">
+		<h3>My Shopping Bag</h3>
+	</span>
+	<span class="alignRight">
+		<h3>Order total:</h3>
+	</span>
+</div>
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>TEA</th>
+				<th>QUANTITY</th>
+				<th>SUB-TOTAL </th>
+			</tr>
+		</thead>
+		<div>
+			<tbody ng-repeat="tea in teaArray">
+				<tr>
+					<td>
+						<img src="{{tea.imageUrl}}">
+					</td>
+					<td>
+							<div id="textBox" >
+								<p class="alignLeft">
+									{{tea.name}}
+								</p>
+								<p class="alignRight">
+									<span>
+										Quantity:
+									</span>
+								</p>
+							</div >
+
+						<p style="clear: both;">Price: {{tea.price | cents}} , <h1>UNITS OF TEAAAAAA {{tea}}</h1></p>
+						<p>Caffine Rating: {{tea.caffeineScale}}</p>
+						<p>Ingredients: {{tea.ingredients}}</p>
+						<p>Rating: {{tea.rating}}</p>
+						<p>In Stock: {{tea.inStock | booleanConverter}}</p>
+						<p>Categories:</p>
+						<ul>
+							<li ng-repeat="category in tea.categories">{{category}}</li>
+						</ul>
+					</td>
+					<td>
+						<span>
+							<button type="button" class="btn btn-warning btn-xs" ng-click="addToBag(tea)">Add To Bag</button>
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</div>
+	</table>
+</div>
+<!-- ########## tea table ##########-->

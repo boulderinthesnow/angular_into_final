@@ -1,8 +1,10 @@
 .alignLeft {
 	float: left;
+	padding-left: 40px;
 }
 .alignRight {
 	float: right;
+	padding-right: 40px;
 }
 
 #title {
