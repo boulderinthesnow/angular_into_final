@@ -26,29 +26,25 @@
 					</td>
 					<td>
 							<div id="textBox" >
-								<p class="alignLeft">
+								<span>
 									{{tea.name}}
-								</p>
+								</span>
 								<p class="alignRight">
 									<span>
-										Quantity:
+										Quantity: {{tea.unitsOfTea}}
 									</span>
 								</p>
 							</div >
 
-						<p style="clear: both;">Price: {{tea.price | cents}} , <h1>UNITS OF TEAAAAAA {{tea}}</h1></p>
+						<p style="clear: both;">Price: {{tea.price | cents}}</h1></p>
 						<p>Caffine Rating: {{tea.caffeineScale}}</p>
 						<p>Ingredients: {{tea.ingredients}}</p>
 						<p>Rating: {{tea.rating}}</p>
-						<p>In Stock: {{tea.inStock | booleanConverter}}</p>
-						<p>Categories:</p>
-						<ul>
-							<li ng-repeat="category in tea.categories">{{category}}</li>
-						</ul>
+						<!-- <p>In Stock: {{tea.inStock | booleanConverter}}</p> -->
 					</td>
 					<td>
 						<span>
-							<button type="button" class="btn btn-warning btn-xs" ng-click="addToBag(tea)">Add To Bag</button>
+							{{tea.unitsOfTea * tea.price | cents}}
 						</span>
 					</td>
 				</tr>
