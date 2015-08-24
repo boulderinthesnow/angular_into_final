@@ -32,3 +32,7 @@ app.filter('booleanConverter', function () {
 		}
 	} // END FUNCTION
 }) // END FILTER
+
+app.filter('toArray', function () {
+	return Object.keys(obj).map(function(key){return obj[key];});
+})
