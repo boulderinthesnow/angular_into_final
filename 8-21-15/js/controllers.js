@@ -21,5 +21,31 @@ app.controller("ShowController", ['$scope', '$http', 'ShoppingCart', '$location'
 
 
 app.controller("ShoppingController", ['$scope', 'ShoppingCart', '$http', function($scope, ShoppingCart, $http){
+	$scope.editBox = false
 	$scope.teaArray = ShoppingCart.shoppingCart
+
+	$scope.totalFunction = function () {
+		$scope.total = $scope.teaArray.map(function(tea) {
+			console.log(tea.quantity * tea.price, "IHBVLIBVHIUVHJIUVJKGVJK")
+			return tea.quantity * tea.price
+		})
+		.reduce(function(x,y) {return x+y})
+	}()
+
+	$scope.edit = function () {
+		console.log("foo")
+		console.log($scope.editBox)
+		$scope.editBox = false
+	
+	}
+
+	$scope.updateTotal = function () {
+		console.log("a little closer")
+		$scope.total = $scope.teaArray.map(function(tea) {
+					console.log(tea.quantity * tea.price, "IHBVLIBVHIUVHJIUVJKGVJK")
+					return tea.quantity * tea.price
+				})
+				.reduce(function(x,y) {return x+y})
+	}
+
 }]) // END CONTROLLER

@@ -6,7 +6,7 @@
 		<h3>My Shopping Bag</h3>
 	</span>
 	<span class="alignRight">
-		<h3>Order total:</h3>
+		<h3>Order total: {{total | cents}}</h3>
 	</span>
 </div>
 <div class="container">
@@ -30,8 +30,12 @@
 									{{tea.name}}
 								</span>
 								<p class="alignRight">
-									<span>
-										Quantity: {{tea.unitsOfTea}}
+									<span ng-show="!editBox">
+										Quantity: {{tea.quantity}}
+									</span>
+									<span ng-show="editBox">
+										Quantity: <input type="text" ng-model="tea.quantity" value="{{tea.quantity}}">
+										<button type="button" class="btn btn-caution btn-xs" ng-click='editBox = !editBox ; updateTotal()'>Edit</button>
 									</span>
 								</p>
 							</div >
@@ -44,8 +48,14 @@
 					</td>
 					<td>
 						<span>
-							{{tea.unitsOfTea * tea.price | cents}}
+							{{tea.quantity * tea.price | cents}}
 						</span>
+						<p>
+							<button type="button" class="btn btn-caution btn-xs" ng-click="editBox = true">Edit</button>
+						</p>
+						<p>
+							<button type="button" class="btn btn-danger btn-xs" ng-click="checkout()">Delete</button>
+						</p>
 					</td>
 				</tr>
 			</tbody>
