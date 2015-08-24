@@ -5,5 +5,9 @@ app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpPro
         templateUrl: '/partials/show.html',
         controller: 'ShowController'
       })
+      .when('/checkout', {
+      	templateUrl: '/partials/checkout.html',
+      	controller: 'ShoppingController'
+      })
   }])
 
