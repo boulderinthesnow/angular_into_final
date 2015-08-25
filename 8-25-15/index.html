@@ -5,7 +5,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js" type="text/javascript"></script>
   <script src="/js/app.js" type="text/javascript"></script>
 </head>
+
 <body ng-controller="YoyoController">
-  <gs-yoyo-details yoyo-data="yoyo"></gs-yoyo-details>
+	<p>ON INDEX {{$scope.yoyos}}</p>
+  <gs-yoyo-details yoyo-data="yoyos"></gs-yoyo-details>
 </body>
 </html>
