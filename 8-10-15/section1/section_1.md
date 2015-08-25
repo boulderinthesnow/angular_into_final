@@ -142,6 +142,7 @@
 ##EXERCISE: Name at least 3 angular built in services that we have used so far.
 #### http, scope, location
 
+
 ##EXERCISE: Read the docs for the q promise library. Why would you prefer to use a promise over a callback? What advantage does it have?
 #### promises are cleaner, easier to read, and when data return from a promise it doesn't require chained callbacks like is required with callbacks. With a promise, until the function running inside the promise is complete the promise is not fulfilled.
 
