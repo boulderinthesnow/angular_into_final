@@ -8,7 +8,7 @@ app.controller('PokeController', ['$scope', function($scope) {
 			    {name: 'Pretty yoyo',
 			    img: "https://s-media-cache-ak0.pinimg.com/736x/72/e1/fa/72e1fa89c1efea5ea12e719fae83efa4.jpg"}
 				];
-				console.log($scope.yoyos[0].name)
+				console.log($scope.pokemons[0].name)
 }]);
 
 
@@ -16,7 +16,7 @@ app.directive('gsPokemonDetails', function() {
 	return {
 		templateUrl: '../partials/show-pokemon.html',
 		scope: {
-			pokemons: 'pokemonData'
+			pokemons: '=pokemonData'
 		}
 	}
 }); 
