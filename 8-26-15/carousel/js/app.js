@@ -1,9 +1,10 @@
 var app = angular.module('carouselApp', [])
 
 app.directive('gsCarouselMaker', function() {
+  var foo = '<h1>BEST CAROUSEL EVER</h1>'
   return {
     restrict: 'E',
-    template: '<h1>FOO</h1>'
+    template: foo
 
     // scope: {
     //   colorChange: '@hoverData'
