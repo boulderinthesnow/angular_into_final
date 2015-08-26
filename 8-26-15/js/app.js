@@ -2,12 +2,17 @@ var app = angular.module('mouseOverDirectiveApp', [])
 
 app.directive('gsChangeBackground', function() {
   return {
+    scope: {
+      colorChange: '@hoverData'
+    },
+
     link: function(scope, element, attrs) {
+      console.log(scope.colorChange)
 
       var oldColor = element.css('background-color');
 
       element.on('mouseenter', function(event) {
-        element.css('background-color', 'yellow');
+        element.css('background-color', scope.colorChange);
       });
 
       element.on('mouseleave', function(event) {
@@ -16,3 +21,38 @@ app.directive('gsChangeBackground', function() {
     }
   };
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
