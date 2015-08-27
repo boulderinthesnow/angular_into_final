@@ -1,14 +1,13 @@
 var app = angular.module('carouselApp', [])
 
 app.directive('gsCarouselMaker', function() {
-  var foo = '<h1>BEST CAROUSEL EVER</h1>'
+  var titleVar = '<h1>BEST CAROUSEL EVER</h1> {{imageArray}}'
   return {
     restrict: 'E',
-    template: foo
-
-    // scope: {
-    //   colorChange: '@hoverData'
-    // },
+    template: titleVar,
+    scope: {
+      imageArray: '@'
+    }
 
     // link: function(scope, element, attrs) {
     //   console.log(scope.colorChange)

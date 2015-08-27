@@ -25,7 +25,7 @@ jqLite provides only the following jQuery methods:
 * find() - Limited to lookups by tag name
 * hasClass()
 * html()
-* next() - Does not support selectors
+* next() - Does not support selectorsx
 * on() - Does not support namespaces, selectors or eventData
 * off() - Does not support namespaces, selectors or event object as parameter
 * one() - Does not support namespaces or selectors
