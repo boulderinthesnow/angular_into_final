@@ -2,6 +2,6 @@
 <!-- <h3 ng-repeat="image in imageArray track by $index">
 	{{image}}
 </h3> -->
-<h1>{{imageArray}}</h1>
-<img ng-src="{{imageArray[0]}}" alt="" height="200px">
+<button ng-click="scrollLeft(imageArray)">LEFT</button>
+<img ng-src="{{image}}" alt="" width="200px">
 <button ng-click="scrollRight(imageArray)">RIGHT</button>
