@@ -14,7 +14,7 @@ app.directive('gsCarouselMaker', function() {
         console.log("scroll right clicked", count)
         scope.image = param[count]
         count++
-        if (count > 2) {
+        if (count > param.length - 1) {
          count = 0
         } 
       };
