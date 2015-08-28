@@ -1,32 +1,24 @@
 var app = angular.module('carouselApp', [])
 
+app.controller('CarouselController', ["$scope", function($scope){
+
+}])
+
 app.directive('gsCarouselMaker', function() {
-  var titleVar = '<h1>BEST CAROUSEL EVER</h1> {{imageArray}}'
   return {
     restrict: 'E',
-    template: titleVar,
+    link: function(scope, element, attrs) {
+      scope.scrollRight = function (param) {
+        console.log("scroll right clicked", param)
+      };
+       // scope.right = function(array) {
+       //  array.push ("foo") 
+       // }
+    },
+    templateUrl: '../partials/carousel.html',
     scope: {
-      imageArray: '@'
+      imageArray: '='
     }
-
-    // link: function(scope, element, attrs) {
-    //   console.log(scope.colorChange)
-    //   if (!scope.colorChange) {
-    //     scope.colorChange = 'blue'
-    //   };
-    //   console.log(scope.colorChange)
-
-    //   var oldColor = element.css('background-color');
-
-    //   element.on('mouseenter', function(event) {
-    //     element.css('background-color', scope.colorChange);
-    //   });
-
-    //   element.on('mouseleave', function(event) {
-    //     element.css('background-color', oldColor);
-    //   })
-    // }, 
-    // restrict : 'A'
   };
 });
 
