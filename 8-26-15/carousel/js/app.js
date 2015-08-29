@@ -8,7 +8,6 @@ app.directive('gsCarouselMaker', function() {
       scope.image = scope.imageArray[0]
       var count = 0
       scope.scrollRight = function (param) {
-        console.log(count)
         scope.image = param[count]
         count++
         if (count > param.length - 1) {
