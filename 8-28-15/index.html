@@ -19,6 +19,19 @@
 	
 </head>
 <body ng-controller="CurrencyController">
-	{{bitcoinData}}
+	<div id="flex-container">
+		<div id="flex-item">
+		<input type="text" ng-model="number">
+		<select name="" id="" ng-model="select">
+			<option selected value="{{bitcoinData.last}}">BTC</option>
+			<option value="{{liteData.last}}">Lite</option>
+			<option value="{{dogeData.last}}">Doge</option>
+		</select >
+		<span ng-show="select * number">
+			{{select * number}}		
+		</span>
+		</div>
+	</div>
+	
 </body>
 </html>
