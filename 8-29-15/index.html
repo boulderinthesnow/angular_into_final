@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="coinApp">
+<html lang="en" ng-app="todoApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -18,21 +18,9 @@
 	<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
 	
 </head>
-<body ng-controller="CurrencyController">
+<body ng-controller="TodosController">
 
-	<div id="flex-container">
-		<div id="flex-item">
-		<input type="text" ng-model="number">
-		<select name="" id="" ng-model="select">
-			<option selected value="{{bitcoinData.last}}">BTC</option>
-			<option value="{{liteData.last}}">Lite</option>
-			<option value="{{dogeData.last}}">Doge</option>
-		</select >
-		<span ng-show="select * number">
-			{{select * number}}		
-		</span>
-		</div>
-	</div>
+	{{todos}}
 	
 </body>
 </html>
