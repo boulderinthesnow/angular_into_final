@@ -2,10 +2,10 @@ app.controller('ChatController', function($scope, $firebaseArray){
 	var chatRef = new Firebase("https://radiant-torch-6315.firebaseio.com/chat")
 	$scope.chats = $firebaseArray(chatRef)
 	$scope.newChat = {name: "", avatar:"", text: ""}
-	// $scope.edit = true
+	 $scope.edit = true
 	$scope.addChat = function() {
 		$scope.chats.$add($scope.newChat).then(function(){
-			$scope.newChat = {name: "", avatar:"", text: ""} 
+			$scope.newChat = {name: "", avatar:"", text: "", edit: true} 
 		})
 		console.log($scope.chats)
 	}
@@ -16,7 +16,10 @@ app.controller('ChatController', function($scope, $firebaseArray){
 
 	$scope.editChat = function(chat) {
 		console.log(chat)
-		$scope.edit = !$scope.edit
+		chat.edit = !chat.edit
+		if (chat.edit) {
+			$scope.chats.$save(chat)
+		}
 	}
 
 	// $scope.todos = $firebaseArray(todosRef)
