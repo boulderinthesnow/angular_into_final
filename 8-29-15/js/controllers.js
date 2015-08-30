@@ -10,6 +10,10 @@ app.controller('TodosController', function($scope, $firebaseArray){
 	
 	}
 
+	$scope.removeTodo = function(todo) {
+		$scope.todos.$remove(todo)
+	}
+
 	// $scope.todos.$add({text: "Walk Rusty", completed: false})
 
 });
