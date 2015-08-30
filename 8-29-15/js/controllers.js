@@ -7,13 +7,19 @@ app.controller('TodosController', function($scope, $firebaseArray){
 		$scope.todos.$add($scope.newTodo).then(function(){
 			$scope.newTodo.text = ""		
 		})
-	
 	}
 
 	$scope.removeTodo = function(todo) {
 		$scope.todos.$remove(todo)
 	}
 
+
+	$scope.crossTodo = function(todo) {
+
+		var rec = $scope.todos.$getRecord(todo.$id)
+		rec.completed = !rec.completed
+		console.log(rec.completed)
+	}
 	// $scope.todos.$add({text: "Walk Rusty", completed: false})
 
 });

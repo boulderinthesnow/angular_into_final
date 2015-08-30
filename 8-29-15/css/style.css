@@ -15,6 +15,10 @@
         width: 100%;
         height: 50%;
     }
-    #flex-item {
+#flex-item {
         margin: auto;
     }
+
+.cross {
+    text-decoration: line-through;
+}
