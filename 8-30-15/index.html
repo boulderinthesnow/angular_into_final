@@ -34,8 +34,11 @@
 			<img ng-src="{{chat.avatar}}" alt="" width="100px">
 			Name: {{chat.name}} |
 
-				<span ng-click="editChat(chat)">
+				<span ng-dblClick="editChat(chat)" ng-show="edit = true">
 					Text: {{chat.text}}
+				</span>
+				<span>
+					
 				</span>
 				<span>
 					<i class="fa fa-times-circle fa-5" ng-click="removeChat(chat)"></i>
