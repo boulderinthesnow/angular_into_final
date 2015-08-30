@@ -16,23 +16,32 @@
 	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 	<!-- AngularFire -->
 	<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
-	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body ng-controller="ChatController">
-	<h1>INDEX PAGE DATA</h1>
-<!-- 	<div id="flex-container">
-		<div id="flex-item">
-		<input type="text" ng-model="number">
-		<select name="" id="" ng-model="select">
-			<option selected value="{{bitcoinData.last}}">BTC</option>
-			<option value="{{liteData.last}}">Lite</option>
-			<option value="{{dogeData.last}}">Doge</option>
-		</select >
-		<span ng-show="select * number">
-			{{select * number}}		
-		</span>
+	<div id="flex-container">
+		<div id='flex-item'>
+			<div>
+				<form ng-submit="addChat()">
+					Name:<input type="text" ng-model="newChat.name">
+					Avatar:<input type="text" ng-model="newChat.avatar">
+					Text:<input type="text" ng-model="newChat.text">
+					<input type="submit" value="Send Message">
+				</form>
+			</div>
+			<!-- {{todos}} -->
+			<div ng-repeat="chat in chats">
+			<img ng-src="{{chat.avatar}}" alt="" width="100px">
+			Name: {{chat.name}} |
+
+				<span ng-click="editChat(chat)">
+					Text: {{chat.text}}
+				</span>
+				<span>
+					<i class="fa fa-times-circle fa-5" ng-click="removeChat(chat)"></i>
+				</span>
+			</div>
 		</div>
-	</div> -->
-	
+	</div>
 </body>
 </html>
