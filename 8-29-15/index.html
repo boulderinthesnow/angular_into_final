@@ -19,8 +19,12 @@
 	
 </head>
 <body ng-controller="TodosController">
-
-	{{todos}}
+	<div id="flex-container">
+		<!-- {{todos}} -->
+		<div id="flex-item" ng-repeat="todo in todos">
+			<p>{{todo.text}}</p>
+		</div>
+	</div>
 	
 </body>
 </html>
